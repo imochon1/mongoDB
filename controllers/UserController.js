@@ -1,3 +1,5 @@
+const bcrypt = require("bcrypt");
+
 const User = require("../models/User.js");
 
 module.exports = {
@@ -13,6 +15,16 @@ module.exports = {
   },
 
   create: async (req, res) => {
+    const saltRounds = 10;
+    const password = req.body.password;
+    const verifyPassword = req.body.verifyPassword;
+    console.log(req.body, "REQ:BODY.");
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    const hashedVerifyPassword = await bcrypt.hash(verifyPassword, saltRounds);
+    req.body.password = hashedPassword;
+    req.body.verifyPassword = hashedVerifyPassword;
+    console.log("Password Hashed", hashedPassword);
+    console.log("Verify Password Hashed", hashedVerifyPassword);
     try {
       const newUser = await User.create(req.body);
       res.status(201).json({
