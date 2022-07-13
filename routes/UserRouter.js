@@ -1,13 +1,17 @@
 //Se llama el modulo express
 const express = require("express");
 const UserController = require("../controllers/UserController");
-const { logger, deletionLogger } = require("../middlewares/logger");
+const {
+  logger,
+  deletionLogger,
+  validateEmail,
+} = require("../middlewares/logger");
 
 const router = express.Router();
 
 router.get("/", UserController.findAll);
 
-router.post("/", logger, UserController.create);
+router.post("/", logger, validateEmail, UserController.create);
 
 router.get("/:id", UserController.findoneById);
 
