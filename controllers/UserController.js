@@ -27,6 +27,7 @@ module.exports = {
     console.log("Verify Password Hashed", hashedVerifyPassword);
     try {
       const newUser = await User.create(req.body);
+      console.log("REQ", req);
       res.status(201).json({
         message: "User Created",
         user: newUser,

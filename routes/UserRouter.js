@@ -1,8 +1,7 @@
 //Se llama el modulo express
 const express = require("express");
 const UserController = require("../controllers/UserController");
-const logger = require("../middlewares/logger");
-const deletionlogger = require("../middlewares/deletionLogger");
+const { logger, deletionLogger } = require("../middlewares/logger");
 
 const router = express.Router();
 
@@ -14,7 +13,7 @@ router.get("/:id", UserController.findoneById);
 
 router.patch("/:id", UserController.updateById);
 
-router.delete("/:id", deletionlogger, UserController.deleteById);
+router.delete("/:id", deletionLogger, UserController.deleteById);
 
 router.delete("/:id/softdelete", UserController.softDeleteById);
 module.exports = router;

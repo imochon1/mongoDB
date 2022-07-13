@@ -1,7 +1,18 @@
+const User = require("../models/User");
+
 const logger = (req, res, next) => {
-  console.log("User Logged");
+  console.log("BODY,", req.body);
+  req.language = "es";
+
   next();
-  return;
+};
+//delete logger
+const deletionLogger = (req, res, next) => {
+  console.log("User Deleted");
+  next();
 };
 
-module.exports = logger;
+const validateEmail = (req, res, next) => {
+  const { email } = req.body;
+};
+module.exports = { logger, deletionLogger, validateEmail };
