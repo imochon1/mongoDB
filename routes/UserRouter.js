@@ -5,6 +5,7 @@ const {
   logger,
   deletionLogger,
   validateEmail,
+  isUserActive,
 } = require("../middlewares/logger");
 
 const router = express.Router();
@@ -19,5 +20,5 @@ router.patch("/:id", UserController.updateById);
 
 router.delete("/:id", deletionLogger, UserController.deleteById);
 
-router.delete("/:id/softdelete", UserController.softDeleteById);
+router.delete("/:id/softdelete", isUserActive, UserController.softDeleteById);
 module.exports = router;
