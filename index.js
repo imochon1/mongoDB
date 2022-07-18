@@ -7,6 +7,8 @@ const mongoose = require("mongoose");
 
 //importamos el UserRouter
 const UserRouter = require("./routes/UserRouter");
+//importamos el AdminRouter
+const AdminRouter = require("./routes/AdminRouter");
 
 mongoose
   .connect(process.env.MONGO_URI)
@@ -26,6 +28,9 @@ app.get("/", (__, res) => {
 
 //Crear Ruta Usuarios
 app.use("/users", UserRouter);
+
+//ruta admins
+app.use("/admins", AdminRouter);
 
 //Escuchar el puerto 3300
 app.listen(3300, () => {
