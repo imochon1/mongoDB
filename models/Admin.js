@@ -10,7 +10,7 @@ const AdminSchema = new Schema({
     min: [18, "No puedes ser menor de 18"],
     max: [100, "No puedes ser mayor de 100"],
   },
-  role: { type: String, default: "ADMIN", enum: ["USER", "ADMIN", "SELLER"] },
+  role: { type: String, default: "ADMIN" },
   password: { type: String, required: true },
   verifyPassword: { type: String, required: true },
   is_active: { type: Boolean, default: true },
