@@ -8,7 +8,9 @@ const mongoose = require("mongoose");
 //importamos el UserRouter
 const UserRouter = require("./routes/UserRouter");
 //importamos el AdminRouter
-const AdminRouter = require("./routes/AdminRouter");
+const PersonalRoutes = require("./routes/PersonalRoutes");
+
+const PlaneRouter = require("./routes/PlaneRouter");
 
 mongoose
   .connect(process.env.MONGO_URI)
@@ -30,8 +32,9 @@ app.get("/", (__, res) => {
 app.use("/users", UserRouter);
 
 //ruta admins
-app.use("/admins", AdminRouter);
+app.use("/personel", PersonalRoutes);
 
+app.use("/planes", PlaneRouter);
 //Escuchar el puerto 3300
 app.listen(3300, () => {
   console.log(`App Running On port ${PORT}`);

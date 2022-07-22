@@ -8,7 +8,7 @@ module.exports = {
   findAll: async (_req, res) => {
     try {
       const allUsers = await User.find({ isDeleted: false });
-      res.status(200).json({ message: "All Users", user: allUsers });
+      res.status(200).json({ message: "All Users", user: allUserNs });
     } catch (error) {
       res.status(400).json({ message: "Error Recovering Users", error });
     }

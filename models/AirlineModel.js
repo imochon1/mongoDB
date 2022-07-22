@@ -2,17 +2,11 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const AirlineSchema = new Schema({
+  //un id se lo da mongoose auto
   name: String,
-  destinations: String,
-  origin: String,
-  price: Number,
-  departure_id: String,
-  arrival_id: String,
-  departure_date: String,
-  arrival_date: String,
-  departure_time: String,
-  arrival_time: String,
-  code: String,
+  precios: String,
+  aviones: { type: Schema.Types.ObjectId, ref: "Aviones" },
+  origen: { type: Schema.Types.ObjectId, ref: "Origen" },
   is_active: { type: Boolean, default: true },
 });
 
