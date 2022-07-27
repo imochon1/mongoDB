@@ -12,6 +12,10 @@ const PersonalRoutes = require("./routes/PersonalRoutes");
 
 const PlaneRouter = require("./routes/PlaneRouter");
 
+const AirlineRouter = require("./routes/AirlineRouter");
+
+const DestinyRouter = require("./routes/DestinyRouter");
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("Conectado a Mongo Atlas"))
@@ -35,6 +39,10 @@ app.use("/users", UserRouter);
 app.use("/personel", PersonalRoutes);
 
 app.use("/planes", PlaneRouter);
+
+app.use("/airlines", AirlineRouter);
+
+app.use("/destinations", DestinyRouter);
 //Escuchar el puerto 3300
 app.listen(3300, () => {
   console.log(`App Running On port ${PORT}`);

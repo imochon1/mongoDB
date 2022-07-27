@@ -11,10 +11,10 @@ const findPersonel = async (_req, res) => {
 
 const addEmployee = async (req, res, next) => {
   try {
-    const newEployee = await Personal.create(req.body);
+    const newEmployee = await Personal.create(req.body);
     res.status(201).json({
       message: "Added Eployee",
-      employeee: newEployee,
+      employeee: newEmployee,
     });
   } catch (error) {
     res.status(400).json({

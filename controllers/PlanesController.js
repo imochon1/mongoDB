@@ -2,7 +2,10 @@ const Planes = require("../models/Aviones");
 
 const findPlanes = async (req, res) => {
   try {
-    const allPlanes = await Planes.find({ is_active: true });
+    const allPlanes = await Planes.find({ is_active: true }).populate(
+      "personal_vuelo"
+    );
+
     res.status(200).json({ message: "All Planes", planes: allPlanes });
   } catch (error) {
     console.log("error", error);

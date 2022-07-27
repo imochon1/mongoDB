@@ -15,3 +15,12 @@
 //catalogo aerolineas con nombre
 
 //buscar como asociar las tablas entre si.
+//1terminar crud de todos los modelos en controller
+//2manejo de tokens y definicion de los mismos a traves de rol a traves de middleware
+//endpoint de login
+//introducir generacion de jwt por login y regresar la info en el json (response)
+//3definir privilegios de rol ya sea manual o con librerias tipo passport
+
+//PAra referenciar con populate el string hace refrencia al key (key: value)
+
+//ref refrencia al modelo de el esquema de mongo.

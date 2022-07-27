@@ -13,7 +13,7 @@ const AvionesSchema = new Schema({
   origen: { type: Schema.Types.ObjectId, ref: "Origen" },
   destino: { type: Schema.Types.ObjectId, ref: "Destinos" },
   hotel: { type: Schema.Types.ObjectId, ref: "Hotel" },
-  personal_vuelo: { type: Schema.Types.ObjectId, ref: "Personal" },
+  personal_vuelo: [{ type: Schema.Types.ObjectId, ref: "Personal" }],
 });
 
 module.exports = mongoose.model("Aviones", AvionesSchema);
