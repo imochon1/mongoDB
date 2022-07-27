@@ -21,6 +21,6 @@
 //introducir generacion de jwt por login y regresar la info en el json (response)
 //3definir privilegios de rol ya sea manual o con librerias tipo passport
 
-//PAra referenciar con populate el string hace refrencia al key (key: value)
+//PAra referenciar con populate el string hace refrencia al key de el schema(key: value)
 
 //ref refrencia al modelo de el esquema de mongo.
