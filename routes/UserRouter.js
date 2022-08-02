@@ -19,6 +19,6 @@ router.get("/:id", UserController.findoneById);
 router.patch("/:id", UserController.updateById);
 
 router.delete("/:id", deletionLogger, UserController.deleteById);
-
+//delete or update??
 router.delete("/:id/softdelete", isUserActive, UserController.softDeleteById);
 module.exports = router;

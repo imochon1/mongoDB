@@ -24,3 +24,13 @@
 //PAra referenciar con populate el string hace refrencia al key de el schema(key: value)
 
 //ref refrencia al modelo de el esquema de mongo.
+
+//pupulate denro de populate investigar
+//terminar de completar crud (patch delete y soft)
+
+//endpoint login verifica si usuario exsite y desencrupta el password y lo verifica
+//se verifica el match con el password y accede a loggear
+
+//si el login es exitoso se genera token co fecha de expiraciion de 10 minutos
+
+//agregar vaiables de entorno al .env para deployent en heroku

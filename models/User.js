@@ -20,6 +20,8 @@ const userSchema = new Schema({
   is_active: { type: Boolean, default: true },
 });
 
+//agregar atributo de attempts tipo entero default 0 if password != password attempt +1 cuando leegue a 4 attempts el usuario se desactiva (bloquea).si se acepta la peticion el jwt debe de expirar en 10 min.
+
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
