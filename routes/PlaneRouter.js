@@ -1,10 +1,10 @@
 const express = require("express");
 
 const PlanesController = require("../controllers/PlanesController");
-
+const { validateToken } = require("../middlewares/loginMiddleware");
 const router = express.Router();
 
-router.get("/", PlanesController.findPlanes);
+router.get("/", validateToken, PlanesController.findPlanes);
 
 router.post("/", PlanesController.postPlane);
 

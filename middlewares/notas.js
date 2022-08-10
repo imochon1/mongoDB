@@ -34,3 +34,5 @@
 //si el login es exitoso se genera token co fecha de expiraciion de 10 minutos
 
 //agregar vaiables de entorno al .env para deployent en heroku
+
+//refrescar en iat ene l header cada

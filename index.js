@@ -41,6 +41,8 @@ app.get("/", (__, res) => {
 //Crear Ruta Usuarios
 app.use("/users", UserRouter); //privado
 
+app.use("/login", LoginRouter); //privado")
+
 //rutas / endpoints
 app.use("/personel", PersonalRoutes); //privado
 
@@ -53,8 +55,6 @@ app.use("/destinations", DestinyRouter);
 app.use("/hotels", HotelsRouter);
 
 app.use("/origins", OriginsRouter);
-
-app.use("/login", LoginRouter);
 
 //añadir login
 
