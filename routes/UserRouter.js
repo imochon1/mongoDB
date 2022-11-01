@@ -7,10 +7,11 @@ const {
   validateEmail,
   isUserActive,
 } = require("../middlewares/logger");
+const { validateToken } = require("../middlewares/userMiddleware");
 
 const router = express.Router();
 
-router.get("/", UserController.findAll);
+router.get("/", validateToken, UserController.findAll);
 
 router.post("/", logger, validateEmail, UserController.create);
 

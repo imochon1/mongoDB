@@ -26,10 +26,10 @@ const UserLogin = async (req, res) => {
           id: userFound._id,
           email: userFound.email,
           role: userFound.role,
-          exp: "600", //10minutos
+          exp: "60 Days", //10minutos
         };
         const token = jwt.sign({ data: payload }, privateKey, {
-          expiresIn: "1h",
+          expiresIn: "60 days",
         });
         console.log("TOKEN", token);
         res.status(200).json({ message: "Login Succesful", token });

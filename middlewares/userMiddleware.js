@@ -1,4 +1,4 @@
-const Aviones = require("../models/Aviones");
+const User = require("../models/User");
 
 const jwt = require("jsonwebtoken");
 
@@ -17,11 +17,10 @@ const validateToken = async (req, res, next) => {
       });
     } else {
       const payload = jwt.verify(authorization, privateKey);
-      console.log("TOKEN", payload);
+      console.log("payload", payload);
       //Aqui se valida el tiempo de exp y se vuelve a settear el token en el header con el nuevo tiempo de expiracion!
 
       res.setHeader("Authorization", "hola");
-
       next();
     }
   } catch (error) {
